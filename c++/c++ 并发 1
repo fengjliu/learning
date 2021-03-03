@@ -1,0 +1,36 @@
+class   A
+{
+  std::atomic<int>      x;
+  std::vector<int>      v;
+  std::mutex            mtx;
+
+  void  Add() {
+    x++;
+  }
+  void  Sub() {
+    x--;
+  }
+
+  /* Example method to protect a vector */
+  void  complexMethod() {
+    mtx.lock();
+
+    // Do whatever complex operation you need here
+    //  - access element
+    //  - erase element
+    //  - etc ...
+
+    mtx.unlock();
+  }
+
+  /*
+  ** Another example using std::lock_guard, as suggested in comments
+  ** if you don't need to manually manipulate the mutex
+  */
+  void  complexMethod2() {
+    std::lock_guard<std::mutex> guard(mtx);
+
+    // access, erase, add elements ...
+  }
+
+};
