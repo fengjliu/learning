@@ -8,7 +8,8 @@
        interpolation
        property binding
        event binding
-       Two-way binding
+       Two-way binding:
+            https://angular.io/guide/two-way-binding
        [ngModule] used for input component
        
        
