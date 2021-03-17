@@ -1,3 +1,6 @@
+    https://angular.io/guide/attribute-directives
+    
     angular directive 相当于可以给一堆控件开发一个通用的外挂， 用来统一改变控件的外观和行为, 外观通过给输入property参数值， 用来控制控件的外观， 
 通过添加eventhandler 监听事件处理来改变控件的行为。
     需要注意的是selector 取名方式需要加上[].
+    
