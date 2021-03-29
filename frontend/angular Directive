@@ -4,7 +4,7 @@
 通过添加eventhandler 监听事件处理来改变控件的行为。
     需要注意的是selector 取名方式需要加上[].
     https://www.cnblogs.com/sap-jerry/p/13581947.html
-    
+    https://malcoded.com/posts/angular-custom-directives/
     
     
     binding way:
