@@ -1,2 +1,20 @@
 https://www.bilibili.com/video/BV16V411k7eF?p=5&spm_id_from=pageDriver
 add_library:    https://www.youtube.com/watch?v=abuCXC3t6eQ
+if SHARED, the class in library must be exported, otherwise no lib file generated 
+  #pragma once
+
+  #include <iosfwd>
+  #include <string>
+
+  class  __declspec(dllexport) Message {
+  public:
+    Message(const std::string &m) : message_(m) {}
+
+    friend std::ostream &operator<<(std::ostream &os, Message &obj) {
+      return obj.printObject(os);
+    }
+
+  private:
+    std::string message_;
+    std::ostream &printObject(std::ostream &os);
+  };
