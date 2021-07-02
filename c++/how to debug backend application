@@ -1,3 +1,4 @@
 To debug backend code after launching, just attach the backend on the backend launcher.
 if want to debug the build up process of backend code, then must set break point at the launcher exe,  there must be one launcher exe which used to to set up backend server. 
 this launcher exe should be invocked by anoter executable program like electron.
+set shouldHalt env to halt forever and print out tips to let the backend code attacted, 
