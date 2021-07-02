@@ -2,3 +2,7 @@ To debug backend code after launching, just attach the backend on the backend la
 if want to debug the build up process of backend code, then must set break point at the launcher exe,  there must be one launcher exe which used to to set up backend server. 
 this launcher exe should be invocked by anoter executable program like electron.
 set shouldHalt env to halt forever and print out tips to let the backend code attacted, 
+if WebSocketServer is the communication way between front end and backend,  then websocket server should handle all common activities with front end regardless the hosted applicaition type
+so application should be created, port assigned by the websocket server, 
+Because the websocket server need find an available port before setup and listing, there is a port searching process which will cost radom time , so this searching process should be run in a
+seprate thread and wait it to exectue to end or timeout .
