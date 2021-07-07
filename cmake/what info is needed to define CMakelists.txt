@@ -1,0 +1,11 @@
+info which is needed in CMakeLists.txt
+   . make version
+   . project name
+   . project directory structure
+   . which file belong to source file, which file belong to header file
+   . compiler version
+   . build output folder
+   . compiler setting
+   . 
+
+  
