@@ -7,4 +7,7 @@ hardware way.
 
 4.  IQ generator way is done by mapping payload into complex data which already caculated,  final mapped complex data is waveform which is complex array
      https://dsp.stackexchange.com/questions/34023/fsk-and-iq-modulation
-     https://www.researchgate.net/figure/Spectrum-of-an-OFDM-Symbol-with-Overlapping-Subcarriers_fig1_323841526
+     https://www.researchgate.net/figure/Spectrum-of-an-OFDM-Symbol-with-Overlapping-Subcarriers_fig1_3238415265. 
+     
+5. IQ modulation can be expressed by complex multiply 
+   so for OFDM, baseband signal is crated by payload to carrier Constellation which 
