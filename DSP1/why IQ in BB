@@ -10,4 +10,8 @@ hardware way.
      https://www.researchgate.net/figure/Spectrum-of-an-OFDM-Symbol-with-Overlapping-Subcarriers_fig1_3238415265. 
      
 5. IQ modulation can be expressed by complex multiply 
-   so for OFDM, baseband signal is crated by payload to carrier Constellation which 
+   so for OFDM, baseband signal is crated by payload to carrier Constellation which has multi-carriers
+   so OFDM signal is actually one mult-carrier signal which has many sub carriers!! general carrier concept is RF carrier, but from mathmatic point view,  there is 2 stages of carry-payload process. 
+   one is payload to subcarrier, another is combined OFDM symboal to RF carrier 
+   
+   
