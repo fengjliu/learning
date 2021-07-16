@@ -1,0 +1,6 @@
+
+ASK/PSK/MSK/FSK should be created by IQ modulation way, means complex signal data which from I channel and Q channel will be used to control the amplitude and phase of carrier signal(LO)
+2
+AM/FM/PM is created by modulating carrier signal with analog signal in typical sg, means there is internal arbitary signal generator which to control carrier signal amplitude/phase by 
+3
+hardware way.
