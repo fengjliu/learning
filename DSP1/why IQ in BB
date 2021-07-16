@@ -4,3 +4,5 @@ ASK/PSK/MSK/FSK should be created by IQ modulation way, means complex signal dat
 AM/FM/PM is created by modulating carrier signal with analog signal in typical sg, means there is internal arbitary signal generator which to control carrier signal amplitude/phase by 
 3
 hardware way.
+
+4.  IQ generator way is done by mapping payload into complex data which already caculated,  final mapped complex data is waveform which is complex array
