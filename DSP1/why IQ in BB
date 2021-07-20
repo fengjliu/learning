@@ -16,9 +16,10 @@ hardware way.
 
 6. once CT signal was sampled, then sampled signal after ADC can be processed with DSP way, in this stage, please forget relation between this digiatl signal with CT signal, 
    in DSP, frequency has different concept with CT signal, period always from [-pi,pi] if do not want to display spectrum  of origianl CT signal
-   but as shown in matlab, the purpose of dsp is always process signal, this signal in real world is always CT signal, so once the CT signal is sampled, the CT signal can be seen as 
+   but as shown in matlab, the purpose of dsp is always process real signal, this signal in real world is always CT signal, so once the CT signal is sampled, the sampled CT signal can be seen as 
    DT signal, after dsp finished, we still want to see ther spectrum of final result,  then we plot the spectrum with origial sampling rate info to display the sampled spectrum( but here note:
-   we must show the spectrum between [0,fs/2] for real signal, [-fs/2, fs/2] for complex signal. 
+   we must show the spectrum between [0,fs/2] for real signal, [-fs/2, fs/2] for complex signal. because spectrum of (sampled CT signal)/(DT signal) is periodically
+   
    
    
    
