@@ -20,6 +20,7 @@ hardware way.
    DT signal, after dsp finished, we still want to see ther spectrum of final result,  then we plot the spectrum with origial sampling rate info to display the sampled spectrum( but here note:
    we must show the spectrum between [0,fs/2] for real signal, [-fs/2, fs/2] for complex signal. because spectrum of (sampled CT signal)/(DT signal) is periodically
    
-   
+7. so the normal DSP process in enginning is:
+   CT signal->sampling and holding->ADC->DSP->recontroduction into CT signal again
    
    
