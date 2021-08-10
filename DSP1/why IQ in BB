@@ -23,4 +23,6 @@ hardware way.
 7. so the normal DSP process in enginning is:
    CT signal->sampling and holding->ADC->DSP->recontroduction into CT signal again
    
-   
+8. why fftshift
+https://www.cnblogs.com/limanjihe/p/10014142.html
+
