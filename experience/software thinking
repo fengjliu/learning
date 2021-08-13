@@ -1,0 +1,53 @@
+20210802
+1. need to make sure how to launch the AWU backend from host 
+2. whether AWU need to be one part of boxer 
+3. how to combine waveform from time domain and frequency domain. and kept phase continuous 
+4. up/down resampling 
+5. smooth filtering 
+6. CFR
+7. how to make the repo of AWU 
+8. front GUI and definations
+9. what features need to be supported
+10.backend C# or C++ for engine
+11.how to transport the Json from front end to back end 
+12. suppported hardware type 
+13.how to geneate noise and add it to signal 
+
+20210812
+1. backend will be C# console.exe which combine sgTransport component
+2. VSA control will be done with C#
+3. because AWU backend is console program, then no need for WCF API wrapper, a seprate launch.exe can be used to manage its application recycle.
+4. 
+
+
+
+
+20210813
+
+1.SgTransport contain CommandServer, CommandServer utilize websocketCSharp server,  when message received by  websocketCSharp server, then its OnMessage() will be called, 
+  then CommandServer will be raise event, because this event is subsribed by sgTransport, then received data will be dispatched 
+            protected override void OnMessage(MessageEventArgs e)
+            {
+
+                if (e.IsText)
+                {
+                    this.CommandServer.OnMessageReceived(e.Data);
+                }
+                else if (e.IsBinary)
+                {
+                    this.CommandServer.OnDataReceived(e.RawData);
+                }
+
+            }
+
+
+ here to get access of internal contained class, there is 2 ways, one is active way, one is inactive way, 
+ active way inject upper level object to lower level object is created. (WebSocketServer->Command server)
+ another way is to subscribe upper level object function to the event of lower level. (Command Server->SgTransport)
+
+ dispatch function is used to call different process function depends on different CommandType from web.
+ 
+2. in front end, the connnection is done by pluginService, which provide common way to establish connection and send message to backend. 
+   depends on diffent port,  the plugin service maybe need override 
+3. application contain top-most settings and playbackManager
+   servce is injected by angular component,   when creating service , the application instance and all contained settings will be created.
