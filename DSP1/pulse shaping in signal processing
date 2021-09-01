@@ -1,3 +1,7 @@
+1.why need pulse shaping?
+2.the mathmatic represention of pulse shaping in wireless communication link
+
+3.how to do pulse shaping
 The filter types ‘None’ and ‘Rectangular’ define the pulse shape in time 
 domain. These filter types can only be applied for integer oversampling. 
 Examples: Filter type ‘None’ with 4 times oversampling generates one 
@@ -14,3 +18,5 @@ in the receiver end, after RF down converting is finished, then IQ signal will p
 then use peak detect to locate the symboal value, this is called symboal detection
 
 if the transmitted signal 
+
+4. how to demodulate one custom-ofdm signal?
