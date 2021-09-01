@@ -1,0 +1,16 @@
+The filter types ‘None’ and ‘Rectangular’ define the pulse shape in time 
+domain. These filter types can only be applied for integer oversampling. 
+Examples: Filter type ‘None’ with 4 times oversampling generates one 
+sample with the actual value followed by 3 samples with a value of zero 
+(Dirac-Pulse). The filter type ‘Rectangular’ with 4 times oversampling 
+generates 4 identical sample values
+
+to be brief: 
+after complex array which is the original symboal is got, oversampling the array first,  then filter the signal using typical filtering such as
+e filter types ‘Root Raised Cosine’, ‘Raised Cosine’, ‘Gaussian’, ‘EDGE’, and ‘Half Sine’, here , pulse shaping on baseband IQ signal is done.
+then this signal will pass DAC and then go the quarter mixing for air transmisstion.
+
+in the receiver end, after RF down converting is finished, then IQ signal will pass ADC first and  sampled with one sample rate which is normal higher than the baseband IQ symboal signal.
+then use peak detect to locate the symboal value, this is called symboal detection
+
+if the transmitted signal 
