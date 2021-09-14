@@ -8,8 +8,11 @@ for example, the demo WPF application and demo Winform app
         . starp uri assignment which assign which GUI loaded which then initial needed objects/instances and loading then to memory and finish GUI rendering
         . assign start-up event function to finish above similar task
         . others control to finish similar task
+        .http://www.blackwasp.co.uk/WPFStartupShutdown_2.aspx
+        
     Winform similar: launch application->load winform->load needed objects to memory and finish rendering
     electron program
+    https://www.electronjs.org/docs/tutorial/quick-start
     
         
 
