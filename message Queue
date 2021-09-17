@@ -1,0 +1,11 @@
+why xx was created?
+ 解决消息通信的典型问题场景：
+  系统解耦、异步通信和流量削峰。除此之外，还有延迟通知、最终一致性保证、顺序消息、流式处理
+  
+what is xx? 消息中间件
+Implemention of xx
+how to apply for requirement?
+
+
+MQ:
+https://www.zhihu.com/question/54152397
