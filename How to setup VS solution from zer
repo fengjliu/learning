@@ -1,0 +1,7 @@
+1. create one project with wanted solution name, project name, target framework version, path
+2. add reference from local lib path or NuGet source
+3. define how to process local lib about whether to copy it to target folder. NuGet package dll and dependences will be copied to target folder in default
+4. dependent dll and native dll which not copied dlls can be copied via post events defination
+5. all operation happened after build can be defined in post-events like digital signing
+6. define 加扰工程，
+7. 
