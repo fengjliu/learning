@@ -1,0 +1,15 @@
+https://dsp.stackexchange.com/questions/14067/what-is-a-window-function-in-dsp-and-why-do-we-need-it
+
+1
+
+Windows in signal/image processing are like windows in real life: an opening on certain landscapes, shedding light or letting air flow on a portion while the rest of it is shaded/hidden. The light shed or air blown is usually more concentrated at the center than around the edges. Classical windows come with different shapes, curtains and blinds. So are the DSP windows.
+
+They are meant to focus on a limited range of values (in time, space or frequencies), with more weight in the center. By doing they, windows concentrate on more stationary or consistent parts of the data (because they are related at close distance).
+
+The design of so many different windows in signal processing is driven by the fact that, in practice, we only capture a finite length of discrete samples. This corresponds to applying uniform/constant weights on an unknown observation. In other words, all the samples inside the window have the same importance, and all the samples outside have zero weight.
+
+The above rectangular window is thus one in the center, and zero elsewhere. Two principal effects can be observed:
+
+all the samples away from the center have the same weight. When the data looses some stationarity, this could be detrimental; we expect better results by giving less weight to the far-away samples
+the jump from 0 to 1 is very sudden. The impact in the frequency domain is drastic.
+As a consequence, people have tried to play between the time and the frequency domain, to find a best balance betwen the decay and ripples in both domains.
