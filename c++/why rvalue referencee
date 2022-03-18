@@ -50,3 +50,4 @@ void forward(Args&&... args) {
 & & -> &
 && & -> &
 由于我们需要保留输入参数的右值属性，因此Args后面需要跟上&&；2、std::forward的模板参数必须是<Args>，而不能是<Args...>，这是由于我们不能对Args进行解包之后传递给std::forward，而解包的过程必须在调用std::forward之后.
+4.https://www.jianshu.com/p/b90d1091a4ff
