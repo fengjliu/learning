@@ -1,0 +1,13 @@
+1 .mat-card can not reponse focus, below css does not works
+
+// .alloy-card:focus{
+//     border-width: 2px;
+//     border-color: red;
+// }
+2. to make it reponse focus with above code, 
+<alloy-card cardTitle="Carriers" [tabIndex]="1"></alloy-card>
+  then in low version angular,  border line color will change into one kinds of color
+  in high version, background-color can be changed,
+  
+  so matcard is not nice to focus event.
+  can be put on top of button, with button response to button
