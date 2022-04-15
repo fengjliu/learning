@@ -1,4 +1,6 @@
 compare IIR and FIR filters:
+   https://www.youtube.com/watch?v=xPTe7ZWLVhQ
+There is different ways to design FIR filters, window based is just one kind
 
-https://www.youtube.com/watch?v=xPTe7ZWLVhQ
+First understand how many ways to design Filter in matlab, then understand relation with OSR
 
