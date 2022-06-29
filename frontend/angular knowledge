@@ -2,3 +2,5 @@ how to draw a line with angular
 https://stackoverflow.com/questions/6278152/draw-a-connecting-line-between-two-elements
 https://flaviocopes.com/npm-peer-dependencies/
   By default, the CLI command ng generate library creates a package.json for the new library. That package.json is used when publishing the library to npm. For more information, see the CLI wiki page Library Support.
+Angular app has main.ts. 
+Electron app also has main.ts
