@@ -4,3 +4,4 @@ https://flaviocopes.com/npm-peer-dependencies/
   By default, the CLI command ng generate library creates a package.json for the new library. That package.json is used when publishing the library to npm. For more information, see the CLI wiki page Library Support.
 Angular app has main.ts. 
 Electron app also has main.ts
+understand how,then no rules or standard 
