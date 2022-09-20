@@ -1,0 +1,7 @@
+makedir a
+cd a
+npm i
+npm i rxjs
+npm i esm # esm is loader for es6
+create index.js
+node -r esm index.js
