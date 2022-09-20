@@ -5,3 +5,15 @@ npm i rxjs
 npm i esm # esm is loader for es6
 create index.js
 node -r esm index.js
+
+
+
+
+
+
+https://blog.jdriven.com/2017/06/typescript-and-es6-import-syntax/
+
+
+latest node version has support another way to run es6 js:
+    https://www.typescriptlang.org/docs/handbook/esm-node.html
+    
