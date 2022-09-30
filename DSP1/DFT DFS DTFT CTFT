@@ -1,1 +1,17 @@
 https://www.bilibili.com/video/BV1VJ411z7hB?p=17
+https://en.wikipedia.org/wiki/Upsampling
+upsampling: interpolation with zeros first in time domain, then filtering
+downsampling: low pass filtering, then decimation in time domain,
+brief: Upsampling requires a lowpass filter after increasing the data rate,
+       and downsampling requires a lowpass filter before decimation. Therefore, 
+       both operations can be accomplished by a single filter with the lower of the two cutoff frequencies.
+       For the L > M case, the interpolation filter cutoff,  {\displaystyle {\tfrac {0.5}{L}}}{\tfrac  {0.5}{L}} cycles per intermediate sample, 
+       is the lower frequency.
+       
+        in time domain resampling can be done, interploation with zeros-> low pass filtering-> demiciamtion
+
+
+in spectrum, resampling can be done
+   DFT first,  resampling in frequency domain(expansion spectrum array to wanted length and then assign target spectrum), then IFFT
+   DFT source signal-> process it into target spectrum->IFFT
+
