@@ -1,3 +1,19 @@
 https://blog.csdn.net/weixin_45810064/article/details/121322948
 http://www.dspguide.com/ch18/2.htm
     The FFTs must be long enough that circular convolution does not take place (also described in Chapter 9). This means that the FFT should be the same length as the output segment, (g). For instance, in the example of Fig. 18-2, the filter kernel contains 129 points and each segment contains 128 points, making output segment 256 points long. This calls for 256 point FFTs to be used. This means that the filter kernel, (a), must be padded with 127 zeros to bring it to a total length of 256 points. Likewise, each of the input segments, (d), must be padded with 128 zeros. As another example, imagine you need to convolve a very long signal with a filter kernel having 600 samples. One alternative would be to use segments of 425 points, and 1024 point FFTs. Another alternative would be to use segments of 1449 points, and 2048 point FFTs.
+resampling in the frequency domain:  
+   resamling ratio is determinted by the interpoltion/decimal radio, not the FFT/IFFT length
+   so procedure is:
+       build smoothing filter with bandwidth and get filter length L
+       interpoliton soruce waveform with target resampling ratio, append h zero values in the preceding and tailing end of waveform, to make it have length=L+M(source waveform)+L
+       padding h function to get length= L+M(source waveform)+L;
+       FFT source waveform and filter function 
+       multiply above FFT result, the result length=L+M(source waveform)+L
+       IFFT the multiplication result and get the resampling result, 
+       avove process has no circular convolution effect.
+    
+    
+    
+    
+       
+       
