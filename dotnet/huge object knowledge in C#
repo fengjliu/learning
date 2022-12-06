@@ -1,0 +1,17 @@
+An array could theoretically have at most 2,147,483,647 elements, since it uses an int for indexing. The actual limit is slightly lower than this, depending on the type contained within the array.
+
+However, there is a 2GB maximum single object restriction in the .NET CLR, even in 64bit. This was done by design.
+
+You can easily make an IList<T> implementation that, internally, keeps multiple arrays, and allows you to grow beyond the 2GB single object limit, but there is not one in the framework itself.
+
+Typically, however, this is not a real problem. Most of the time, you'll have arrays pointing to large classes - so the array is just holding references. This would mean your array can effectively point to many, many GBs of memory - but the array itself cannot be >2GB.
+
+Note that, as of .NET 4.5, there is a new option available where 64bit applications can opt-in: gcAllowVeryLargeObjects. With this new option set, it is possible to get UInt32.MaxValue (4,294,967,295) elements in a multi-dimensional array, though a single dimensional array is still limited to 2,146,435,071 elements (2,147,483,591 for single byte arrays or arrays of a struct containing nothing ut a byte).
+
+The new rules with this option are:
+
+The maximum number of elements in an array is UInt32.MaxValue.
+The maximum index in any single dimension is 2,147,483,591 (0x7FFFFFC7) for byte arrays and arrays of single-byte structures, and 2,146,435,071 (0X7FEFFFFF) for other types.
+The maximum size for strings and other non-array objects is unchanged.
+
+https://stackoverflow.com/questions/2338778/what-is-the-maximum-length-of-an-array-in-net-on-64-bit-windows
