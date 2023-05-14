@@ -1,3 +1,5 @@
+1.  进程同步
+
 在 Windows 操作系统下，可以使用 CreateMutex 和 OpenMutex 函数创建和打开一个互斥体对象，并将其用于多进程同步。下面是一个示例：
 
 进程1：
@@ -71,9 +73,15 @@ int main()
         return 1;
     }
 
-    std::cout << "Mutex released in process 2." << std::endl;
+    std::cout << "Mutex released in process 2." << std::endl;  
+
 
     CloseHandle(hMutex);
     return 0;
 }
+    
+ 2. 内核对象的自我销毁机制
+    
+    Usage Counting
+    when coutt=0; will destroy self
 
