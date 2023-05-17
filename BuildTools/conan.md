@@ -25,6 +25,10 @@ ChatGPT: conanbuildinfo.txt 和 conanbuildinfo.cmake 是由 Conan 构建系统�
 
 conanbuildinfo.txt 是一个文本文件，其中包含了依赖项的编译选项、库路径和头文件路径等信息。它以键值对的形式存储这些信息，可以被其他构建系统或脚本解析和使用。
 
+
+3. default_options 必须被赋值， 要么在conanfile.py 中， 要么在conan install .. -o 命令中作为参数输入， 比如：conan install .. -o shared=True
+4. 
+
 conanbuildinfo.cmake 是一个 CMake 脚本文件，它提供了 CMake 变量和宏，用于在 CMake 构建过程中使用依赖项。它通过包含 conanbuildinfo.cmake 文件并调用其中定义的变量和宏，来配置项目的构建环境。
 
 两个文件的作用类似，都是为了简化依赖项的管理和构建过程。选择使用哪个文件取决于您所使用的构建系统或构建工具。如果您使用的是非-CMake 构建系统，则可以使用 conanbuildinfo.txt 文件。如果您使用的是 CMake 构建系统，则可以使用 conanbuildinfo.cmake 文件。
