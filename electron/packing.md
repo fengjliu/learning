@@ -26,3 +26,6 @@ Zip:
   else:
     cmd = 'tar -czvf {}.tgz ./Awu-*-x64'.format(output_file)
    
+   
+
+http://127.0.0.1:2999/processlist/api/v1/outputmodels
