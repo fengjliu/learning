@@ -65,4 +65,48 @@ function AboutPage() {
 );
   ```
   seems {} 可以把任何要显示在JSX 中的元素包在里面, 以及嵌套， 类似加减乘除运算式中的小括号嵌套
+  ```
+  import { useState } from 'react';
+
+export default function MyApp() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
+    </div>
+  );
+}
+
+function MyButton({ count, onClick }) {
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+
+  ```
 # Conditional rendering
+# Rendering lists 
+ You will rely on JavaScript features like for loop and the array map() function to render lists of components
+ # Responding to events
+ You can respond to events by declaring event handler functions inside your components:
+ #  Add state to your component to remeber something
+ ```
+function MyButton() {
+  const [count, setCount] = useState(0);
+  // ...
+
+You’ll get two things from useState: the current state (count), and the function that lets you update it (setCount). You can give them any names, but the convention is to write [something, setSomething].
+```
+# Using Hooks
+Functions starting with use are called Hooks
+
+Hooks are more restrictive than other functions. You can only call Hooks at the top of your components (or other Hooks). If you want to use useState in a condition or a loop, extract a new component and put it there.
