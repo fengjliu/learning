@@ -53,7 +53,9 @@ function AboutPage() {
  remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, functions, and even JSX!
 
  all props are included into {} 
+ 
  function Card({ children }) {}
+ 
  function Avatar({ person, size }){}
 ```
 import { getImageUrl } from './utils.js'
