@@ -1,0 +1,7 @@
+在 WPF (Windows Presentation Foundation) 中，AppDomain.CurrentDomain.UnhandledException 和 DispatcherUnhandledException 都是用于处理未捕获的异常的事件。
+
+AppDomain.CurrentDomain.UnhandledException 事件是在应用程序域中的任何线程上引发的未捕获异常时触发的。当应用程序中的线程未能捕获并处理异常时，该事件提供了一个机会来执行全局异常处理逻辑。但请注意，该事件并不保证应用程序能够继续运行，因为异常可能已经导致应用程序的不可恢复状态。
+
+DispatcherUnhandledException 事件是在应用程序的主 UI 线程上引发的未捕获异常时触发的。WPF 应用程序的 UI 线程是单线程的，该事件提供了一个机会来捕获并处理在 UI 线程上抛出的异常。通过处理这个事件，可以防止未处理的异常导致应用程序崩溃，并采取适当的措施来处理异常情况，例如记录错误信息、向用户显示错误消息等。
+
+需要注意的是，AppDomain.CurrentDomain.UnhandledException 和 DispatcherUnhandledException 事件处理程序应该尽量只用于处理无法预料的异常，并在处理程序中执行最小的操作。如果能够预料到特定的异常情况，最好使用 try-catch 块来显式处理异常，而不依赖于这些全局异常处理事件。
