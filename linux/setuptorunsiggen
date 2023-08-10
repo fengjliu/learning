@@ -1,0 +1,268 @@
+1  sudo apt update
+    2  sudo visudo
+    3  su
+    4  sudo apt update
+    5  cd ..
+    6  cd home
+    7  cd ~
+    8  dir
+    9  cd Documents
+   10  ls
+   11  cd notes
+   12  ls
+   13  sudo chmod +x prep4dev.sh
+   14  ./prep4dev.sh
+   15  conan remote list
+   16  python
+   17  pip
+   18  pip install conan==1.60.0
+   19  conan remote list
+   20  conan --version
+   21  pip install conan==1.60.0
+   22  conan -version
+   23  conan
+   24  pip3 install conan==1.60.0
+   25  sudo apt install build-essential
+   26  su
+   27  conan --version
+   28  cmake --version
+   29  pip install cmake
+   30  cmake --version
+   31  cmale
+   32  cmake
+   33  sudo apt install cmake
+   34  conan remote list
+   35  sudo apt install g++-10
+   36  1
+   37  g++ --version
+   38  sudo apt install gcc-10
+   39  cd ..
+   40  ls
+   41  mkdir kd
+   42  cd kd
+   43  git --version
+   44  git clone https://bitbucket.it.keysight.com/scm/ss/siggen.git
+   45  conan remote add conan-local https://artifactory.it.keysight.com/artifactory/api/conan/conan-local
+   46  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6T0tCQndDNXE4M1dMaFFqbFExSkl1M1BSa09Y -r conan-local-cc fengjliu
+   47  conan remote list
+   48  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6T0tCQndDNXE4M1dMaFFqbFExSkl1M1BSa09Y -r conan-local-cc fengjliu
+   49  conan remote add conan-local-cc https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-cc
+   50  conan remote add conan-keysight https://artifactory.it.keysight.com/artifactory/api/conan/conan-keysight
+   51  conan remote add conan-local-k3p https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-k3p
+   52  conan remote add conan-local-kal https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-kal
+   53  conan remote list
+   54  git clone https://bitbucket.it.keysight.com/scm/ss/pwsg.git
+   55  cd pwsg
+   56  cd sg-cpp
+   57  ls
+   58  cd Sg-cpp
+   59  mkdir build
+   60  cd build
+   61  conan install ..
+   62  export CONAN_REVISIONS_ENABLED=1
+   63  conan install ..
+   64  conan remote list
+   65  conan install --upate --build missing
+   66  conan install --update --build missing
+   67  conan install ..  --update --build missing
+   68  conan remote list
+   69  conan install RxCpp/4.1.1@keysight/latest
+   70  conan install RxCpp/4.1.1@keysight/latest --build missing
+   71  cd ~/conan
+   72  cd..
+   73  cd ..
+   74  cd ~
+   75  ls -a
+   76  cd .conan
+   77  ls
+   78  cat conan.conf
+   79  cd ..
+   80  cd kkd
+   81  cd kd
+   82  ls
+   83  cd liu
+   84  cd kd
+   85  cd siggen
+   86  cd SigGen-cpp
+   87  cd ..
+   88  cd pwsg
+   89  cd Sg-cpp
+   90  cd build
+   91  conan install .. -u --build missing
+   92  su
+   93  conan remote list
+   94  cd ..
+   95  ls
+   96  cd kd
+   97  cd SigGen
+   98  ls
+   99  cd siggen
+  100  conan remote add conan-local https://artifactory.it.keysight.com/artifactory/api/conan/conan-local
+  101  conan remove remote
+  102  cat conan.conf
+  103  cd SigGen-cpp
+  104  mkdir build
+  105  cd build
+  106  conan install .. -u --build missing
+  107  export CONAN_REVISIONS_ENABLED=1
+  108  conan install .. -u --build missing
+  109  cd ..
+  110  ls
+  111  cd ~/.conan
+  112  ls
+  113  cat conan.conf
+  114  export CONAN_REVISIONS_ENABLED=1
+  115  echo $CONAN_REVISIONS_ENABLED
+  116  echo pip install conan
+  117  conan --version
+  118  cd ..
+  119  cd kd
+  120  cd pwsg
+  121  cd Sg-cpp
+  122  cd build
+  123  conan config set general.revisions_enabled=True
+  124  conan config set general.full_transitive_package_id=True
+  125  conan config set general.default_package_id_mode=full_package_mode
+  126  conan install ..
+  127  conan remote clean
+  128  conan remote iist
+  129  conan remote list
+  130  conan remote add conan-local https://artifactory.it.keysight.com/artifactory/api/conan/conan-local
+  131  conan remote add conan-keysight https://artifactory.it.keysight.com/artifactory/api/conan/conan-keysight
+  132  conan install ..
+  133  cd ..
+  134  ls -a
+  135  cd .conan
+  136  ls
+  137  cat remotes.json
+  138  nano conan.conf
+  139  su
+  140  cd ..
+  141  cd kd
+  142  cd pwsg'
+  143  cd ..
+  144  conan remote add conan-local-infiniivision https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-infiniivision
+  145  cd kd
+  146  conan pwsg
+  147  cd PWSG
+  148  ls
+  149  cd pwsg
+  150  cd Sg-cpp
+  151  cd build
+  152  conan remote list
+  153  conan install ..
+  154  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6Z25iVGJoMVFRZWRYMDNkSDZmcnJhV2RITzlK -r conan-local-infiniivision fengjliu
+  155  conan install ..
+  156  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6R0ZiajFncFdHSHF0N0hpNUFBMnVhSGFaWFJl -r conan-keysight fengjliu
+  157  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6V2FpN1g4bmlUNXlUZFBiVlpJUU9VMjFRMUpU -r conan-local fengjliu
+  158  conan remote add conan-local-k3p https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-k3p
+  159  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6dDFLRG1lb3RNZFhjd0x5UEpHejQydjhkcFND -r conan-local-k3p fengjliu
+  160  conan remote add conan-local-kal https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-kal
+  161  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6a2xETHZvV3pocmFpU0t4WG1OeGhFUXUzeGZk -r conan-local-kal fengjliu
+  162  conan install ..
+  163  conan install .. -u --build missing
+  164  conan installCommonComponent/0.3.0-10@keysight/latest
+  165  conan install CommonComponent/0.3.0-10@keysight/latest
+  166  conan remote add conan-local-cc https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-cc
+  167  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6YU94cUNOZld4QllHV0dVSm1idFZTRUJqeDM2 -r conan-local-cc fengjliu
+  168  conan install CommonComponent/0.3.0-10@keysight/latest
+  169  conan install CommonComponent/0.3.0-10@keysight/latest --build missing
+  170  conan install .. -u --build missing
+  171  code
+  172  conan remove CommonComponent*
+  173  conan profile show
+  174  conan install CommonComponent/0.3.0-10@keysight/latest --build missing
+  175  conan install .. -u --build missing
+  176  conan build ..
+  177  cd ..
+  178  cd siggen
+  179  cd SigGen-cpp
+  180  ls
+  181  cd build
+  182  conan install .. -u --build missing
+  183  gcc --version
+  184  conan install . -s KalClient:compiler=gcc -s KalClient:compiler.version=10
+  185  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=10
+  186  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=10 --build missing
+  187  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=8 --build missing
+  188  conan install .. --build=missing
+  189  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=10 --build missing
+  190  conan remove KalCli*
+  191  conan install KalClient/4.5.0@keysight/stable --build missing
+  192  conan install . -s KalClient:compiler=gcc -s KalClient:compiler.version=10
+  193  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=10
+  194  conan remove KalCli*
+  195  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=10
+  196  conan install KalClient/4.5.0@keysight/stable
+  197  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=10
+  198  g++ --version
+  199  which gcc
+  200  which gcc | xargs file
+  201  conan remote add conan-local-ion https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-ion
+  202  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6RHZMeXBQOEh0Y3cxRktoeVQyN3JoUzZGUmZ3 -r conan-local-ion fengjliu
+  203  conan remote add conan-local-pwsg https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-pwsg
+  204  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6MXdzYzZHRHV2V3ZuU09wSzZNd0N2ODdwTkdx -r conan-local-pwsg fengjliu
+  205  conan conan remote add conan-local-kal-public https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-kal-public
+  206  conan remote add conan-local-kal-public https://artifactory.it.keysight.com/artifactory/api/conan/conan-local-kal-public
+  207  conan user -p cmVmdGtuOjAxOjAwMDAwMDAwMDA6S2pQczRScGk5eVhMWU1wZUhkek5JZ0g5bDhQ -r conan-local-kal-public fengjliu
+  208  conan remove KalC*
+  209  conan install KalClient/4.5.0@keysight/stable
+  210  conan install .. -u --build missing
+  211  conan remove KalC*
+  212  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=10
+  213  conan install .. -s KalClient:compiler=gcc -s KalClient:compiler.version=8
+  214  cd..
+  215  cd ..
+  216  ls
+  217  cd ..
+  218  ls
+  219  ~
+  220  cd 
+  221  cd Documents
+  222  ls
+  223  cd ..
+  224  ls
+  225  cd Desktop
+  226  ls
+  227  cd ..
+  228  ls -a
+  229  cd ..
+  230  cd root
+  231  su
+  232  cd ..
+  233  ls
+  234  cd .conan
+  235  ls
+  236  cat conan.conf
+  237  conan profile show default
+  238  cls
+  239  conan profiles show default
+  240  conan profile show default
+  241  gdb --version
+  242  sudo curl -fl https://getcli.jfrog.io | sh
+  243  sudo apt install curl
+  244  sudo curl -fl https://getcli.jfrog.io | sh
+  245  ./slack
+  246  sudo apt update
+  247  sudo apt upgrade
+  248  cd Siggen
+  249  cd siggen
+  250  cd Siggen-cpp
+  251  cd SigGen-cpo
+  252  cd SigGen-cpp
+  253  cd build
+  254  conan install .. -o MCS3=False -o SimLicensing=True -o Plugins=True -e USE_CPP=SgCpp
+  255  conan build ..
+  256  wget https://www.youtube.com/watch?v=4lAy1dXgfQ8~
+  257  wget https://www.youtube.com/watch?v=4lAy1dXgfQ8
+  258  cd ..
+  259  cd SigGen-ui
+  260  npm run live-reload:MCS3
+  261  y
+  262  history
+  263  npm run live-reload
+  264  pip show gitpython
+  265  pip install gitpython
+  266  pip show gitpython
+  267  npm run live-reload
+  268  history
