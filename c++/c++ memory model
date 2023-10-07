@@ -4,3 +4,8 @@ also how c++ compiler works to translate c++ code to actual code for execution
 
 
       https://www.youtube.com/watch?v=iLiDezv_Frk&t=872s
+
+# 为什么要深入理解C++ 对象模型
+
+当年贝尔实验室发明C++的任务之一就是探索以C++ 完成大规模程序设计时可能遇到的问题的种种解决之道。 解决之道要落实在c++ 语言的设计和编译器设计中， 两者的结合才能给出给出解决方案，
+理解C++ 对象模型就有助于理解C++为什么这么设计的初衷。 理解what and why
