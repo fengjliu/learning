@@ -14,6 +14,8 @@
     迭代器， 算法， 都是基于模板技术实现的， 进一步的抽象和封装
 
     Learning to use these algorithms effectively requires understanding their structure rather than memorizing the details of each algorithm. 
+
+    标准库不是将每个容器类型的每个操作定义为成员，而是定义了一组通用算法：“算法”因为它们实现了常见的经典算法，如排序和搜索，“通用”因为它们可以操作不同类型的元素和多种容器类型——不仅是库类型，如vector或list，还包括内置数组类型——而且，正如我们将看到的，还可以操作其他类型的序列。
     
   
   ## 充分展示了编程的哲学是抽象和封装始终是为了提供更加高效有力的工具，
