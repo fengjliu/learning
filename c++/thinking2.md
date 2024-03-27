@@ -12,6 +12,9 @@
   ## C++标准库的容器是基础数据结构和算法的进一步封装和抽象; 是为了解决之前的标准依然存在的漏洞， 
 
     迭代器， 算法， 都是基于模板技术实现的， 进一步的抽象和封装
+
+    Learning to use these algorithms effectively requires understanding their structure rather than memorizing the details of each algorithm. 
+    
   
   ## 充分展示了编程的哲学是抽象和封装始终是为了提供更加高效有力的工具，
 
