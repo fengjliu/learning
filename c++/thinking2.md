@@ -16,6 +16,8 @@
     Learning to use these algorithms effectively requires understanding their structure rather than memorizing the details of each algorithm. 
 
     标准库不是将每个容器类型的每个操作定义为成员，而是定义了一组通用算法：“算法”因为它们实现了常见的经典算法，如排序和搜索，“通用”因为它们可以操作不同类型的元素和多种容器类型——不仅是库类型，如vector或list，还包括内置数组类型——而且，正如我们将看到的，还可以操作其他类型的序列。
+
+    标准库算法并没有直接操作容器， 而是通过迭代器来操作的， 两个迭代器定义一个范围， 算法在这个范围内操作， 这样就是先了算法和容器解耦， 
     
   
   ## 充分展示了编程的哲学是抽象和封装始终是为了提供更加高效有力的工具，
