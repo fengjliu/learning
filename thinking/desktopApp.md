@@ -7,4 +7,11 @@
     for example:   QT and MFC
 2. all desktop framework should provide a library of UI controls,including layout, edit, control..
    all GUI object has a hierarchy of objects like tree
+3. top layer GUI object always need to be created and show by one application object in main.cpp
+   main.cpp：
+
+创建 QApplication 对象，用于管理应用程序的控制流和主设置。
+创建 MainWindow 对象，并显示它。
+调用 app.exec() 进入应用程序的事件循环。
+   
    
