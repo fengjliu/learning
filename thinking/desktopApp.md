@@ -15,6 +15,8 @@
 调用 app.exec() 进入应用程序的事件循环。
 
 4. 所有桌面app 框架的项目文件都有相似的智能： 组织项目文件系统，定义编译器和链接器， 定义editor 属性， 定义其他代码文件加工流水线的操作
-5. 
+~~~
+The first thing you want to do with Qt Creator is figure out how to add source files and build (or debug) your project
+~~~
    
    
