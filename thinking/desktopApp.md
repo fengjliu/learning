@@ -4,6 +4,7 @@
    create all services such as IO.file. task. serilize/deserisze
    created data layer
    implement foundation of event/function binding
-2. for example:
-   QT and MFC
+    for example:   QT and MFC
+2. all desktop framework should provide a library of UI controls,including layout, edit, control..
+   all GUI object has a hierarchy of objects like tree
    
