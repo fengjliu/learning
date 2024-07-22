@@ -1,3 +1,6 @@
+# 链接
+https://www.codeproject.com/Articles/22717/Using-PropertyGrid
+
 Introduction
 PropertyGrid is a standard component windows form, which is in the first and second version of the .NET Framework. This component allows us to display properties of practically all types of objects, without writing any additional code. For all the demos, I created a Form and placed it on a button, with the button name btnAssign, and PropertyGrid with the name prpG.
 
