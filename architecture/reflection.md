@@ -46,3 +46,5 @@ for attr in dir(cls):
     mothod = getattr(cls, attr)
     if type(mothod) is types.MethodType:
         mothod()
+## 详细介绍
+https://www.jb51.net/article/240113.htm#_label4
