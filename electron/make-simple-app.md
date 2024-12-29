@@ -14,3 +14,7 @@ The executable runs the JavaScript entry point found in the main property of you
 Renderer processes (or renderers for short) are responsible for displaying graphical content. You can load a web page into a renderer by pointing it to either a web address or a local HTML file. Renderers behave very similarly to regular web pages and have access to the same web APIs.
 
 In the next section of the tutorial, we will be learning how to augment the renderer process with privileged APIs and how to communicate between processes.
+
+# link3 Creating a Desktop App with Electron, Typescript, and Angular
+
+https://buddy.works/tutorials/building-a-desktop-app-with-electron-and-angular
