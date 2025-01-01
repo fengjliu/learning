@@ -123,3 +123,83 @@ xml
 不需要每个项目都打包成一个单独的 NuGet 包，你可以根据需要将多个项目打包成一个包，或者将每个项目打包为独立的包。
 如果需要将多个项目合并成一个包，可以通过 .nuspec 文件手动控制。
 如果你希望每个项目有单独的版本和独立发布，可以为每个项目打包一个独立的 NuGet 包。
+
+# 4. Nuget 包的内容输出一起被打包到conan 包中， 那么需要将所有依赖的输出一起打包
+    NuGet 包的标准结构要求 .dll 文件应放在 lib 目录下。
+    常见错误信息：
+    ~~~
+    2>C:\Program Files\dotnet\sdk\8.0.204\Sdks\NuGet.Build.Tasks.Pack\buildCrossTargeting\NuGet.Build.Tasks.Pack.targets(221,5): warning NU5100: The assembly 'content\bin\debug\net6.0\ClassLibrary1.dll' is not inside the 'lib' folder and hence it won't be added as a reference when the package is installed into a project. Move it into the 'lib' folder if it needs to be referenced.
+2>C:\Program Files\dotnet\sdk\8.0.204\Sdks\NuGet.Build.Tasks.Pack\buildCrossTargeting\NuGet.Build.Tasks.Pack.targets(221,5): warning NU5100: The assembly 'contentFiles\any\net6.0\bin\debug\net6.0\ClassLibrary1.dll' is not inside the 'lib' folder and hence it won't be added as a reference when the package is installed into a project. Move it into the 'lib' folder if it needs to be referenced.
+2>C:\Program Files\dotnet\sdk\8.0.204\Sdks\NuGet.Build.Tasks.Pack\buildCrossTargeting\NuGet.Build.Tasks.Pack.targets(221,5): warning NU5100: The assembly 'contentFiles\any\net8.0\bin\debug\net6.0\ClassLibrary1.dll' is not inside the 'lib' folder and hence it won't be added as a reference when the package is installed into a project. Move it into the 'lib' folder if it needs to be referenced.
+2>C:\Program Files\dotnet\sdk\8.0.204\Sdks\NuGet.Build.Tasks.Pack\buildCrossTargeting\NuGet.Build.Tasks.Pack.targets(221,5): warning NU5100: The assembly 'content\bin\debug\net6.0\ConsoleApp3.dll' is not inside the 'lib' folder and hence it won't be added as a reference when the package is installed into a project. Move it into the 'lib' folder if it needs to be referenced.
+    ~~~
+
+    这个警告 NU5100 通常出现在 NuGet 打包时，表示 程序集（如 ClassLibrary1.dll 或 ConsoleApp3.dll）没有被放置在 NuGet 包的 lib 文件夹中，因此无法作为引用被自动添加到目标项目中。这种情况通常发生在你通过 NuGet 打包时，某些文件（如程序集）被放置到了错误的目录，导致 NuGet 无法正确识别它们并将其作为引用添加到项目中。
+
+解决方法：
+要解决这个警告，你需要确保将程序集文件放置在正确的目录结构下，通常是 lib 文件夹，而不是其他目录（如 content 或 contentFiles）。NuGet 包的标准结构要求 .dll 文件应放在 lib 目录下。
+
+1. 使用 .csproj 配置正确的打包路径
+在 .csproj 文件中，你可以指定程序集应该被打包到 lib 目录下，这样当 NuGet 包安装时，程序集文件会被正确地添加为项目的引用。
+
+以下是如何在 .csproj 文件中配置，将 bin\debug\net6.0\ClassLibrary1.dll 或其他程序集放到 lib\net6.0 目录下：
+
+xml
+复制代码
+~~~
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputPath>bin\Debug\net6.0\</OutputPath>  <!-- 你可以设置输出路径 -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 将程序集文件放到 lib\net6.0 目录 -->
+    <None Include="bin\Debug\net6.0\ClassLibrary1.dll" Pack="true" PackagePath="lib\net6.0\ClassLibrary1.dll" />
+    <None Include="bin\Debug\net6.0\ConsoleApp3.dll" Pack="true" PackagePath="lib\net6.0\ConsoleApp3.dll" />
+  </ItemGroup>
+
+</Project>
+~~~
+2. 确保打包的文件在 lib 目录下
+你要确保所有的程序集（如 ClassLibrary1.dll 和 ConsoleApp3.dll）在包内的路径符合 NuGet 包的标准结构。在 NuGet 包中，所有的程序集应该放在 lib/{target-framework} 目录下，例如：
+
+markdown
+复制代码
+lib
+ ├── net6.0
+     ├── ClassLibrary1.dll
+     ├── ConsoleApp3.dll
+3. 避免错误的路径结构
+警告中提到的文件路径显示为 content\bin\debug\net6.0\ClassLibrary1.dll 和 contentFiles\any\net6.0\bin\debug\net6.0\ClassLibrary1.dll，这表明你的文件被错误地放到了 content 或 contentFiles 文件夹中。一般来说，程序集文件应该放在 lib 目录下。如果它们出现在 content 或 contentFiles 目录中，NuGet 将不会自动将它们添加为引用。
+
+你可以通过 PackagePath 属性来确保程序集被正确放置在 lib 目录中，如上述 .csproj 配置所示。
+
+4. 使用 dotnet pack 或 nuget pack 打包
+在修改 .csproj 文件后，可以通过以下命令打包项目：
+
+bash
+复制代码
+dotnet pack
+或者，如果你使用的是 .nuspec 文件，可以使用 nuget pack 命令。
+
+5. 验证生成的包结构
+生成的 .nupkg 文件可以通过以下命令解压并检查其内部结构，确保程序集文件被放置在正确的目录中：
+
+bash
+复制代码
+~~~
+nuget locals all -clear  # 清理缓存
+nuget pack MyPackage.nuspec  # 打包
+nuget verify MyPackage.nupkg  # 验证包
+~~~
+或者使用任何压缩软件打开 .nupkg 文件，并查看 lib/net6.0/ 目录，确认程序集文件是否在其中。
+
+总结：
+确保程序集文件放在 lib/{target-framework} 目录。
+使用 Pack="true" 和 PackagePath 在 .csproj 文件中正确配置文件的路径。
+避免将程序集文件放入 content 或 contentFiles 文件夹中。
+使用 dotnet pack 或 nuget pack 打包，并检查包结构。
+通过这些步骤，你可以解决 NuGet 打包过程中的 NU5100 警告，并确保程序集能够被正确引用。
+   
