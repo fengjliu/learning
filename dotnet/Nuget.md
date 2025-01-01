@@ -203,3 +203,21 @@ nuget verify MyPackage.nupkg  # 验证包
 使用 dotnet pack 或 nuget pack 打包，并检查包结构。
 通过这些步骤，你可以解决 NuGet 打包过程中的 NU5100 警告，并确保程序集能够被正确引用。
    
+# 打包策略：
+    Nuget 包的内容输出一起被打包到conan 包中， 那么需要将所有依赖的输出一起打包， 因为在Conan的领域中， Nuget 包的依赖关系将不起作用
+    传统SignalStudio的项目文件格式将由Sdk代替， 这是为了将来的升级方便， 但是只支持两种格式
+    net framework 和 net 8(9, 10)
+    或
+    net and net-windows 
+    对于前者， net-windows分支将交给SA 维护， 且不merge back
+
+     传统SignalStudio 的项目可以做包但是不单独上传， 因为不共享。
+     transport 必须提供net framework 和 net8.0 het6.0 3种格式， 但是依然保留原来的项目文件， 因为AWU 不需要进入linux
+     signalstudio 和 signalstudioModels 也需要net framework 和 net8.0 het6.0 3种格式， 因为要被 transport 依赖。
+     basebandframwork 待定。
+
+    最好的策略， 才哟个sdk格式， 同时分离net8-windows， 只用 netframework 和net8,6, 10, 因为随着net 的演进， net-windows支持的控件是有变化的
+     
+    
+    
+    
